@@ -1,0 +1,21 @@
+{
+    "title": "Welcome Guest",
+    "direction": "ltr",
+    "placeholder": "Type or paste your content here",
+    "clipboard": "Copy to clipboard",
+    "selectAll": "Select All",
+    "reset": "Reset",
+    "uppercase": "UPPERCASE",
+    "lowercase": "lowercase",
+    "capitalizedCase": "Capitalized Case",
+    "arabicAccent": "remove Arabic accent",
+    "removeUrl": "remove Url",
+    "duplicatedWords": "remove Duplicated Words",
+    "arabicToEnglish": "🇺🇸 Arabic to English Numbers",
+    "englishToArabic": "🇸🇦 English to Arabic Numbers",
+    "characterCount": "Character Count",
+    "characterWithSpace": "Character Count (space)",
+    "wordCount": "Word Count",
+    "lineCount": "Line Count",
+    "marginRight": "10px"
+}
