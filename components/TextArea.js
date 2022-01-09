@@ -5,6 +5,7 @@ import Clipboard from "./icons/Clipboard";
 import SelectAll from "./icons/SelectAll";
 import Reset from "./icons/Reset";
 import AddIcon from "./icons/AddIcon";
+import LanguageIcon from "./icons/LanguageIcon";
 
 const TextArea = () => {
   const {
@@ -40,7 +41,9 @@ const TextArea = () => {
           }}
           style={{ margin: "10px 0 10px 0" }}
         >
-          AR
+          <span>
+            <LanguageIcon iconWidth={20} /> Arabic
+          </span>
         </button>
       ) : (
         <button
@@ -49,7 +52,9 @@ const TextArea = () => {
           }}
           style={{ margin: "10px 0 10px 0" }}
         >
-          EN
+          <span>
+            <LanguageIcon iconWidth={20} /> English
+          </span>
         </button>
       )}
       <div>
