@@ -68,6 +68,7 @@ const TextArea = () => {
         <button
           className="btn btn-primary form-control material-icons"
           onClick={addTask}
+          style={{ marginRight: `${t("marginRight")}` }}
         >
           <span>
             <AddIcon iconWidth={20} />
@@ -115,7 +116,17 @@ const TextArea = () => {
                 className=" mt-2 btn btn-warning material-icons"
                 onClick={() => handleDelete(value)}
               >
-                delete
+                <span>
+                  <Reset iconWidth={20} />
+                </span>
+              </button>
+              <button
+                onClick={() => navigator.clipboard.writeText(value.title)}
+                style={{ marginRight: `${t("marginRight")}` }}
+              >
+                <span>
+                  <Clipboard iconWidth={20} />
+                </span>
               </button>
             </div>
           </div>
