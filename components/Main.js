@@ -16,6 +16,7 @@ import { Toggle } from "./Toggle";
 import TextArea from "./TextArea";
 import WordCount from "./WordCount";
 import Footer from "./Footer";
+import History from "./History";
 
 const Main = () => {
   const { t } = useContext(MyContext);
@@ -44,6 +45,7 @@ const Main = () => {
           <ConvertNumbers />
           <FixNumbers />
         </div>
+        <History />
         <WordCount />
       </div>
       <Footer />

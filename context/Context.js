@@ -13,6 +13,7 @@ export default function ThemeProvider({ children }) {
   const { t, i18n } = useTranslation();
   const [darkTheme, setDarkTheme] = useState(undefined);
   const [tasks, setTasks] = useState([]);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     if (darkTheme !== undefined) {
@@ -105,6 +106,10 @@ export default function ThemeProvider({ children }) {
     setLang(!lang);
   };
 
+  const handleShow = () => {
+    setShow(!show);
+  };
+
   return (
     <MyContext.Provider
       value={{
@@ -131,6 +136,9 @@ export default function ThemeProvider({ children }) {
         addTask,
         handleDelete,
         handleClear,
+        show,
+        setShow,
+        handleShow,
       }}
     >
       {children}

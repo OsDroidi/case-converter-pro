@@ -17,5 +17,8 @@
     "characterWithSpace": "Character Count (space)",
     "wordCount": "Word Count",
     "lineCount": "Line Count",
-    "marginRight": "10px"
+    "margin": "0 10px 0 0",
+    "save": "Save",
+    "showHistory": "Show History",
+    "hideHistory": "Hide History"
 }

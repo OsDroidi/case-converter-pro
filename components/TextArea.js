@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useContext } from "react";
 import { MyContext } from "../context/Context";
 import Clipboard from "./icons/Clipboard";
@@ -14,10 +15,7 @@ const TextArea = () => {
     InputRef,
     t,
     i18n,
-    tasks,
     addTask,
-    handleDelete,
-    handleClear,
   } = useContext(MyContext);
 
   return (
@@ -57,7 +55,7 @@ const TextArea = () => {
       <div>
         <button
           onClick={() => navigator.clipboard.writeText(value)}
-          style={{ marginRight: `${t("marginRight")}` }}
+          style={{ margin: `${t("margin")}` }}
         >
           <span>
             <Clipboard iconWidth={20} />
@@ -65,18 +63,14 @@ const TextArea = () => {
           </span>
         </button>
 
-        <button
-          className="btn btn-primary form-control material-icons"
-          onClick={addTask}
-          style={{ marginRight: `${t("marginRight")}` }}
-        >
+        <button onClick={addTask} style={{ margin: `${t("margin")}` }}>
           <span>
             <AddIcon iconWidth={20} />
-            Save
+            {t("save")}
           </span>
         </button>
 
-        <button onClick={handleSelect} style={{ marginRight: "10px" }}>
+        <button onClick={handleSelect} style={{ margin: `${t("margin")}` }}>
           <span>
             <SelectAll iconWidth={20} />
             {t("selectAll")}
@@ -88,59 +82,6 @@ const TextArea = () => {
             {t("reset")}
           </span>
         </button>
-      </div>
-      <div className="container row">
-        <div className="badge">
-          You have
-          {!tasks.length
-            ? " no tasks"
-            : tasks.length === 1
-            ? " 1 value"
-            : tasks.length > 1
-            ? ` ${tasks.length} tasks`
-            : null}
-        </div>
-        {tasks.map((value) => (
-          <div key={value.id}>
-            <div className="col-11">
-              <span
-                className="form-control bg-white btn mt-2"
-                style={{ textAlign: "left", fontWeight: "bold" }}
-              >
-                {value.title}
-              </span>
-            </div>
-
-            <div className="col-1">
-              <button
-                className=" mt-2 btn btn-warning material-icons"
-                onClick={() => handleDelete(value)}
-              >
-                <span>
-                  <Reset iconWidth={20} />
-                </span>
-              </button>
-              <button
-                onClick={() => navigator.clipboard.writeText(value.title)}
-                style={{ marginRight: `${t("marginRight")}` }}
-              >
-                <span>
-                  <Clipboard iconWidth={20} />
-                </span>
-              </button>
-            </div>
-          </div>
-        ))}
-        {!tasks.length ? null : (
-          <div>
-            <button
-              className="btn btn-secondary  mt-4 mb-4"
-              onClick={() => handleClear()}
-            >
-              Clear
-            </button>
-          </div>
-        )}
       </div>
     </>
   );
