@@ -21,5 +21,9 @@
     "save": "Save",
     "showHistory": "Show History",
     "hideHistory": "Hide History",
-    "time": "en-US"
+    "time": "en-US",
+    "good": "Good",
+    "evening": "Evening",
+    "morning": "Morning",
+    "afternoon": "Afternoon"
 }

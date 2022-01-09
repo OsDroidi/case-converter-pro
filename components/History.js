@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useContext } from "react";
 import { MyContext } from "../context/Context";
 import Clipboard from "./icons/Clipboard";
@@ -6,6 +7,7 @@ import ShowIcon from "./icons/ShowIcon";
 import HideIcon from "./icons/HideIcon";
 
 const History = () => {
+  const [copy, setCopy] = useState("");
   const { t, tasks, handleDelete, handleClear, show, handleShow } =
     useContext(MyContext);
 
@@ -35,6 +37,7 @@ const History = () => {
             </span>
           )}
         </button>
+        <p>{copy}</p>
         {show && (
           <div>
             {tasks.map((value) => (
@@ -52,7 +55,13 @@ const History = () => {
                     </span>
                   </button>
                   <button
-                    onClick={() => navigator.clipboard.writeText(value.title)}
+                    onClick={() => {
+                      navigator.clipboard.writeText(value.title);
+                      setCopy("Copied!");
+                      setTimeout(() => {
+                        setCopy("");
+                      }, 1000);
+                    }}
                     style={{ marginRight: `${t("marginRight")}` }}
                   >
                     <span>

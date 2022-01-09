@@ -21,5 +21,9 @@
     "save": "حفظ",
     "showHistory": "اظهار السجل",
     "hideHistory": "اخفاء السجل",
-    "time": "ar-EG"
+    "time": "ar-EG",
+    "good": "",
+    "evening": "مساء الخير",
+    "morning": "صباح الخير",
+    "afternoon": ""
 }

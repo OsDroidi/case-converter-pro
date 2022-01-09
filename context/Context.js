@@ -17,6 +17,8 @@ export default function ThemeProvider({ children }) {
   const [data, setData] = useState(null);
   const [copySuccess, setCopySuccess] = useState("");
   const [copy, setCopy] = useState("");
+  const [today, setDate] = useState(new Date()); // Save the current date to be able to trigger an update
+  const locale = `${t("time")}`;
 
   async function updateQuote() {
     try {
@@ -105,6 +107,36 @@ export default function ThemeProvider({ children }) {
     }
   }, []);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      // Creates an interval which will update the current data every minute
+      // This will trigger a rerender every component that uses the useDate hook.
+      setDate(new Date());
+    }, 60 * 1000);
+    return () => {
+      clearInterval(timer); // Return a funtion to clear the timer so that it will stop being called on unmount
+    };
+  }, []);
+
+  const day = today.toLocaleDateString(locale, { weekday: "long" });
+  const date = `${day}, ${today.getDate()} ${today.toLocaleDateString(locale, {
+    month: "long",
+    year: "numeric",
+  })}`;
+
+  const hour = today.getHours();
+  const wish = `${t("good")} ${
+    (hour < 12 && `${t("morning")}`) ||
+    (hour < 17 && `${t("afternoon")}`) ||
+    `${t("evening")}`
+  }`;
+
+  const time = today.toLocaleTimeString(locale, {
+    hour: "numeric",
+    hour12: true,
+    minute: "numeric",
+  });
+
   const addTask = (e) => {
     if (value) {
       const newTask = { id: new Date().getTime().toString(), title: value };
@@ -187,6 +219,9 @@ export default function ThemeProvider({ children }) {
         updateQuote,
         setCopy,
         copy,
+        wish,
+        date,
+        time,
       }}
     >
       {children}
