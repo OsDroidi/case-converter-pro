@@ -61,13 +61,6 @@ button:hover,
   background-color: var(--color-primary);
   border: 1px solid var(--color-paragraph);
 }
-@media only screen and (max-width: 600px) {
-  button:hover {
-    color: var(--color-background);
-    background-color: var(--color-primary);
-    border: 1px solid var(--color-paragraph);
-  }
-}
 
 textarea {
   font-size: 1.5rem;
@@ -77,8 +70,21 @@ textarea {
   border-color: var(--color-paragraph);
 }
 
+textarea:focus {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+}
+
 .dark-mode > span {
   text-align: right;
   font-size: 3rem;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  button:hover {
+    color: var(--color-background);
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-paragraph);
+  }
 }
