@@ -12,6 +12,7 @@ export default function ThemeProvider({ children }) {
   const [lang, setLang] = useState(false);
   const { t, i18n } = useTranslation();
   const [darkTheme, setDarkTheme] = useState(undefined);
+  const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
     if (darkTheme !== undefined) {
@@ -56,6 +57,33 @@ export default function ThemeProvider({ children }) {
     );
   }, [value]);
 
+  useEffect(() => {
+    if (localStorage.getItem("localTasks")) {
+      const storedList = JSON.parse(localStorage.getItem("localTasks"));
+      setTasks(storedList);
+    }
+  }, []);
+
+  const addTask = (e) => {
+    if (value) {
+      const newTask = { id: new Date().getTime().toString(), title: value };
+      setTasks([...tasks, newTask]);
+      localStorage.setItem("localTasks", JSON.stringify([...tasks, newTask]));
+      setValue("");
+    }
+  };
+
+  const handleDelete = (value) => {
+    const deleted = tasks.filter((t) => t.id !== value.id);
+    setTasks(deleted);
+    localStorage.setItem("localTasks", JSON.stringify(deleted));
+  };
+
+  const handleClear = () => {
+    setTasks([]);
+    localStorage.removeItem("localTasks");
+  };
+
   const handleTyping = (e) => {
     setValue(e.target.value);
     setLineCount(countLine);
@@ -98,6 +126,11 @@ export default function ThemeProvider({ children }) {
         toggle,
         darkTheme,
         setDarkTheme,
+        tasks,
+        setTasks,
+        addTask,
+        handleDelete,
+        handleClear,
       }}
     >
       {children}

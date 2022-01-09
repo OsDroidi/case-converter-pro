@@ -3,6 +3,7 @@ import { MyContext } from "../context/Context";
 import Clipboard from "./icons/Clipboard";
 import SelectAll from "./icons/SelectAll";
 import Reset from "./icons/Reset";
+import AddIcon from "./icons/AddIcon";
 
 const TextArea = () => {
   const {
@@ -13,7 +14,10 @@ const TextArea = () => {
     InputRef,
     t,
     i18n,
-    dark,
+    tasks,
+    addTask,
+    handleDelete,
+    handleClear,
   } = useContext(MyContext);
 
   return (
@@ -28,6 +32,8 @@ const TextArea = () => {
         onChange={handleTyping}
         placeholder={t("placeholder")}
         ref={InputRef}
+        name="value"
+        type="text"
       ></textarea>
       {i18n.language === "en" ? (
         <button
@@ -58,6 +64,17 @@ const TextArea = () => {
             {t("clipboard")}
           </span>
         </button>
+
+        <button
+          className="btn btn-primary form-control material-icons"
+          onClick={addTask}
+        >
+          <span>
+            <AddIcon iconWidth={20} />
+            Save
+          </span>
+        </button>
+
         <button onClick={handleSelect} style={{ marginRight: "10px" }}>
           <span>
             <SelectAll iconWidth={20} />
@@ -70,6 +87,49 @@ const TextArea = () => {
             {t("reset")}
           </span>
         </button>
+      </div>
+      <div className="container row">
+        <div className="badge">
+          You have
+          {!tasks.length
+            ? " no tasks"
+            : tasks.length === 1
+            ? " 1 value"
+            : tasks.length > 1
+            ? ` ${tasks.length} tasks`
+            : null}
+        </div>
+        {tasks.map((value) => (
+          <div key={value.id}>
+            <div className="col-11">
+              <span
+                className="form-control bg-white btn mt-2"
+                style={{ textAlign: "left", fontWeight: "bold" }}
+              >
+                {value.title}
+              </span>
+            </div>
+
+            <div className="col-1">
+              <button
+                className=" mt-2 btn btn-warning material-icons"
+                onClick={() => handleDelete(value)}
+              >
+                delete
+              </button>
+            </div>
+          </div>
+        ))}
+        {!tasks.length ? null : (
+          <div>
+            <button
+              className="btn btn-secondary  mt-4 mb-4"
+              onClick={() => handleClear()}
+            >
+              Clear
+            </button>
+          </div>
+        )}
       </div>
     </>
   );
