@@ -17,6 +17,7 @@ import TextArea from "./TextArea";
 import WordCount from "./WordCount";
 import Footer from "./Footer";
 import History from "./History";
+import Time from "./Time";
 
 const Main = () => {
   const { t } = useContext(MyContext);
@@ -30,6 +31,7 @@ const Main = () => {
       >
         <Toggle />
         <h1>{t("title")}</h1>
+        <Time />
         <TextArea />
         <div className="cards">
           <UpperCase />

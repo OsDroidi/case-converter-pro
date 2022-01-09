@@ -20,5 +20,6 @@
     "margin": "0 10px 0 0",
     "save": "Save",
     "showHistory": "Show History",
-    "hideHistory": "Hide History"
+    "hideHistory": "Hide History",
+    "time": "en-US"
 }
