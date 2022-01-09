@@ -59,7 +59,6 @@ const TextArea = () => {
       )}
       <div>
         <button
-          tabIndex="0"
           onClick={() => navigator.clipboard.writeText(value)}
           style={{ margin: `${t("margin")}` }}
         >
