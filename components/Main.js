@@ -21,6 +21,7 @@ import Time from "./Time";
 import QuotesText from "./QuotesText";
 import QuickIcons from "./QuickIcons";
 import Language from "./Language";
+import NavBar from "./NavBar";
 
 const Main = () => {
   const { t } = useContext(MyContext);
@@ -32,12 +33,13 @@ const Main = () => {
           direction: `${t("direction")}`,
         }}
       >
-        <Toggle />
+        <NavBar />
         <h1>{t("title")}</h1>
         <Time />
         <QuotesText />
         <Language />
         <TextArea />
+        <WordCount />
         <div className="cards">
           <UpperCase />
           <LowerCase />
@@ -54,7 +56,6 @@ const Main = () => {
         </div>
         <QuickIcons />
         <History />
-        <WordCount />
       </div>
       <Footer />
     </>
