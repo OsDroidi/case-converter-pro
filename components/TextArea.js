@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useContext } from "react";
 import { MyContext } from "../context/Context";
 import Clipboard from "./icons/Clipboard";
@@ -17,6 +16,8 @@ const TextArea = () => {
     t,
     i18n,
     addTask,
+    copy,
+    copyClipboard,
   } = useContext(MyContext);
 
   return (
@@ -58,10 +59,7 @@ const TextArea = () => {
         </button>
       )}
       <div>
-        <button
-          onClick={() => navigator.clipboard.writeText(value)}
-          style={{ margin: `${t("margin")}` }}
-        >
+        <button onClick={copyClipboard} style={{ margin: `${t("margin")}` }}>
           <span>
             <Clipboard iconWidth={20} />
             {t("clipboard")}
@@ -87,6 +85,7 @@ const TextArea = () => {
             {t("reset")}
           </span>
         </button>
+        <p>{copy}</p>
       </div>
     </>
   );

@@ -14,6 +14,46 @@ export default function ThemeProvider({ children }) {
   const [darkTheme, setDarkTheme] = useState(undefined);
   const [tasks, setTasks] = useState([]);
   const [show, setShow] = useState(false);
+  const [data, setData] = useState(null);
+  const [copySuccess, setCopySuccess] = useState("");
+  const [copy, setCopy] = useState("");
+
+  async function updateQuote() {
+    try {
+      const response = await fetch("https://api.quotable.io/random");
+      const { statusCode, statusMessage, ...data } = await response.json();
+      if (!response.ok) throw new Error(`${statusCode} ${statusMessage}`);
+      setData(data);
+    } catch (error) {
+      // If the API request failed, log the error to console and update state
+      // so that the error will be reflected in the UI.
+      console.error(error);
+      setData({ content: "Opps... Something went wrong" });
+    }
+  }
+
+  // Run `updateQuote` once when component mounts
+  useEffect(() => {
+    updateQuote();
+  }, []);
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(
+      `${data.content} \n- ${data.author} \n\nhttps://case-converter-pro.vercel.app/`
+    );
+    setCopySuccess("Copied!");
+    setTimeout(() => {
+      setCopySuccess("");
+    }, 1000);
+  };
+
+  const copyClipboard = () => {
+    navigator.clipboard.writeText(value);
+    setCopy("Copied!");
+    setTimeout(() => {
+      setCopy("");
+    }, 1000);
+  };
 
   useEffect(() => {
     if (darkTheme !== undefined) {
@@ -139,6 +179,14 @@ export default function ThemeProvider({ children }) {
         show,
         setShow,
         handleShow,
+        copyToClipboard,
+        copyClipboard,
+        copySuccess,
+        setCopySuccess,
+        data,
+        updateQuote,
+        setCopy,
+        copy,
       }}
     >
       {children}
