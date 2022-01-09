@@ -19,6 +19,8 @@ import Footer from "./Footer";
 import History from "./History";
 import Time from "./Time";
 import QuotesText from "./QuotesText";
+import QuickIcons from "./QuickIcons";
+import Language from "./Language";
 
 const Main = () => {
   const { t } = useContext(MyContext);
@@ -34,21 +36,23 @@ const Main = () => {
         <h1>{t("title")}</h1>
         <Time />
         <QuotesText />
+        <Language />
         <TextArea />
         <div className="cards">
           <UpperCase />
           <LowerCase />
           <CapitalizedCase />
-          <CamelCase />
-          <SnakeCase />
           <ArabicAccent />
-          <RemoveEmoji />
           <RemoveUrl />
-          <DuplicatedWords />
-          <Slug />
+          <RemoveEmoji />
           <ConvertNumbers />
           <FixNumbers />
+          <CamelCase />
+          <DuplicatedWords />
+          <SnakeCase />
+          <Slug />
         </div>
+        <QuickIcons />
         <History />
         <WordCount />
       </div>

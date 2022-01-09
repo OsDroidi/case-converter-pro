@@ -9,7 +9,6 @@ const Time = () => {
       <p>{wish}</p>
       <p>{date}</p>
       <p>{time}</p>
-      <br />
     </div>
   );
 };

@@ -10,12 +10,11 @@ const QuotesText = () => {
 
   return (
     <div style={{ textAlign: "center" }} onClick={copyToClipboard}>
-      <p>{data.content}</p>
+      <p>“{data.content}”</p>
       <p>
         - {data.author} <Clipboard iconWidth={20} />
       </p>
       {copySuccess}
-      <br />
     </div>
   );
 };

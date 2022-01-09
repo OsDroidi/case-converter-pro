@@ -41,7 +41,7 @@ export default function ThemeProvider({ children }) {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(
-      `${data.content} \n- ${data.author} \n\nhttps://case-converter-pro.vercel.app/`
+      `“${data.content}” \n- ${data.author} \n\nhttps://case-converter-pro.vercel.app/`
     );
     setCopySuccess("Copied!");
     setTimeout(() => {
