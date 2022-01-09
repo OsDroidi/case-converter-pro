@@ -5,9 +5,9 @@ const NavBar = () => {
   return (
     <div className="nav-bar">
       <Toggle />
-      <h3 className="pretty-text-underline">About</h3>
-      <h3 className="pretty-text-underline">Contact</h3>
-      <h3 className="pretty-text-underline">Learn</h3>
+      <p className="pretty-text-underline">About</p>
+      <p className="pretty-text-underline">Contact</p>
+      <p className="pretty-text-underline">Learn</p>
     </div>
   );
 };
