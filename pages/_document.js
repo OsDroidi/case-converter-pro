@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head></Head>
-        <body onTouchStart="">
+        <body>
           <script
             dangerouslySetInnerHTML={{
               __html: themeInitializerScript,

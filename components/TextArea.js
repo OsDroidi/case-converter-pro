@@ -64,11 +64,7 @@ const TextArea = () => {
           </span>
         </button>
 
-        <button
-          tabIndex="0"
-          onClick={addTask}
-          style={{ margin: `${t("margin")}` }}
-        >
+        <button onClick={addTask} style={{ margin: `${t("margin")}` }}>
           <span>
             <AddIcon iconWidth={20} />
             {t("save")}
