@@ -29,7 +29,7 @@ const TextArea = () => {
         placeholder={t("placeholder")}
         ref={InputRef}
       ></textarea>
-      {i18n.language === "en" && (
+      {i18n.language === "en" ? (
         <button
           onClick={() => {
             i18n.changeLanguage("ar");
@@ -38,8 +38,7 @@ const TextArea = () => {
         >
           AR
         </button>
-      )}
-      {i18n.language === "ar" && (
+      ) : (
         <button
           onClick={() => {
             i18n.changeLanguage("en");
