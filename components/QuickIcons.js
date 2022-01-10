@@ -4,6 +4,7 @@ import Clipboard from "./icons/Clipboard";
 import SelectAll from "./icons/SelectAll";
 import Reset from "./icons/Reset";
 import AddIcon from "./icons/AddIcon";
+import RippleButton from "./RippleButton";
 
 const QuickIcons = () => {
   const { setValue, handleSelect, t, addTask, copy, copyClipboard } =
@@ -32,12 +33,11 @@ const QuickIcons = () => {
             {t("selectAll")}
           </span>
         </button>
-        <button onClick={() => setValue("")}>
-          <span>
-            <Reset iconWidth={20} />
-            {t("reset")}
-          </span>
-        </button>
+        <RippleButton
+          text={`${t("reset")}`}
+          onClick={() => setValue("")}
+          component="Reset"
+        ></RippleButton>
         <p>{copy}</p>
       </div>
     </>

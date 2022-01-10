@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../context/Context";
-import LanguageIcon from "./icons/LanguageIcon";
+import RippleButton from "./RippleButton";
 
 const Language = () => {
   const { i18n } = useContext(MyContext);
@@ -8,27 +8,23 @@ const Language = () => {
   return (
     <>
       {i18n.language === "en" ? (
-        <button
+        <RippleButton
+          text="Arabic"
           onClick={() => {
             i18n.changeLanguage("ar");
           }}
           style={{ margin: "10px 0 10px 0" }}
-        >
-          <span>
-            <LanguageIcon iconWidth={20} /> Arabic
-          </span>
-        </button>
+          component="LanguageIcon"
+        ></RippleButton>
       ) : (
-        <button
+        <RippleButton
+          text="English"
           onClick={() => {
             i18n.changeLanguage("en");
           }}
           style={{ margin: "10px 0 10px 0" }}
-        >
-          <span>
-            <LanguageIcon iconWidth={20} /> English
-          </span>
-        </button>
+          component="LanguageIcon"
+        ></RippleButton>
       )}
     </>
   );
