@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { MyContext } from "../context/Context";
 import ArabicAccent from "./convert/ArabicAccent";
 import CamelCase from "./convert/CamelCase";
@@ -21,10 +21,22 @@ import QuotesText from "./QuotesText";
 import QuickIcons from "./QuickIcons";
 import Language from "./Language";
 import NavBar from "./NavBar";
-import HorizontalScrollable from "./HorizontalScrollable";
 
 const Main = () => {
   const { t } = useContext(MyContext);
+
+  const [show, setShow] = React.useState(true);
+  const [showProgramming, setShowProgramming] = React.useState(false);
+
+  const handleShow = () => {
+    setShow(true);
+    setShowProgramming(false);
+  };
+
+  const handleShowProgramming = () => {
+    setShow(false);
+    setShowProgramming(true);
+  };
 
   return (
     <>
@@ -42,26 +54,47 @@ const Main = () => {
         <Language />
         <TextArea />
         <WordCount />
-        <HorizontalScrollable />
+        <div className="scrollmenu">
+          <button onClick={handleShow}>All</button>
+          <button onClick={handleShowProgramming}>Programming</button>
+          <button>More...</button>
+        </div>
+
         <div className="cards">
-          <UpperCase />
-          <LowerCase />
-          <CapitalizedCase />
-          <ArabicAccent />
-          <RemoveUrl />
-          <RemoveEmoji />
-          <ConvertNumbers />
-          <FixNumbers />
-          <CamelCase />
-          <DuplicatedWords />
-          <SnakeCase />
-          <Slug />
+          <>
+            {show && (
+              <>
+                <UpperCase />
+                <LowerCase />
+                <CapitalizedCase />
+                <ArabicAccent />
+                <RemoveUrl />
+                <RemoveEmoji />
+                <ConvertNumbers />
+                <FixNumbers />
+                <CamelCase />
+                <DuplicatedWords />
+                <SnakeCase />
+                <Slug />
+              </>
+            )}
+            {showProgramming && (
+              <>
+                <ConvertNumbers />
+                <FixNumbers />
+                <CamelCase />
+                <DuplicatedWords />
+                <SnakeCase />
+                <Slug />
+              </>
+            )}
+          </>
         </div>
         <QuickIcons />
         <History />
+        <Footer />
+        <br />
       </div>
-      <Footer />
-      <br />
     </>
   );
 };
