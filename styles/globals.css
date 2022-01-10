@@ -88,11 +88,33 @@ textarea:focus {
 }
 
 .nav-bar {
+  list-style: none;
   display: flex;
   justify-content: center;
   gap: 80px;
-
+  color: var(--color-primary);
   padding: 10px;
+  background-color: transparent;
+}
+
+li,
+a {
+  font-size: 100%;
+  list-style: none;
+  text-decoration: none;
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+li,
+a:active {
+  background-color: transparent;
+}
+
+li,
+a:focus {
+  background-color: transparent;
+  border: none;
 }
 
 .pretty-text-underline {
@@ -104,7 +126,7 @@ textarea:focus {
     var(--color-background)
   );
   background-repeat: no-repeat;
-  background-size: auto 0.1rem;
+  background-size: auto 0.3rem;
   background-position: 0 80%;
   transition: ease-in-out 0.3s;
   padding: 10px;
@@ -119,10 +141,23 @@ textarea:focus {
   font-size: 2rem;
   cursor: pointer;
 }
+
+.word-count {
+  display: flex;
+  gap: 20px;
+}
 @media only screen and (max-width: 600px) {
   button:hover {
     color: var(--color-background);
     background-color: var(--color-primary);
     border: 1px solid var(--color-paragraph);
+  }
+  .word-count {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+  .word-count > span {
+    display: none;
   }
 }

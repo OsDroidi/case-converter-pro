@@ -4,11 +4,17 @@ import { Toggle } from "./Toggle";
 const NavBar = () => {
   return (
     <>
-      <div className="nav-bar">
-        <p className="pretty-text-underline">About</p>
-        <p className="pretty-text-underline">Contact</p>
-        <p className="pretty-text-underline">Learn</p>
-      </div>
+      <ul className="nav-bar">
+        <li className="pretty-text-underline">
+          <a href="#">About</a>
+        </li>
+        <li className="pretty-text-underline">
+          <a href="#">Contact</a>
+        </li>
+        <li className="pretty-text-underline">
+          <a href="#">Learn</a>
+        </li>
+      </ul>
       <Toggle />
     </>
   );

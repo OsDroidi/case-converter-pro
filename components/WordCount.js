@@ -5,7 +5,7 @@ const WordCount = () => {
   const { value, wordCount, lineCount, t } = useContext(MyContext);
 
   return (
-    <div style={{ display: "flex", gap: "20px" }}>
+    <div className="word-count">
       <p>
         {t("characterCount")}: {value.replace(/\s/g, "").length}
       </p>

@@ -58,6 +58,7 @@ const Main = () => {
         <History />
       </div>
       <Footer />
+      <br />
     </>
   );
 };
