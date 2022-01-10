@@ -26,16 +26,29 @@ const Main = () => {
   const { t } = useContext(MyContext);
 
   const [show, setShow] = React.useState(true);
+  const [showText, setShowText] = React.useState(false);
   const [showProgramming, setShowProgramming] = React.useState(false);
 
   const handleShow = () => {
     setShow(true);
     setShowProgramming(false);
+    setShowText(false);
+  };
+
+  const handleShowText = () => {
+    setShow(false);
+    setShowProgramming(false);
+    setShowText(true);
   };
 
   const handleShowProgramming = () => {
     setShow(false);
+    setShowText(false);
     setShowProgramming(true);
+  };
+
+  const supportUs = () => {
+    window.open("https://www.paypal.me/osdroidi", "_blank");
   };
 
   return (
@@ -52,12 +65,14 @@ const Main = () => {
           <QuotesText />
         </div>
         <Language />
+        <QuickIcons />
         <TextArea />
         <WordCount />
         <div className="scrollmenu">
           <button onClick={handleShow}>All</button>
+          <button onClick={handleShowText}>Text</button>
           <button onClick={handleShowProgramming}>Programming</button>
-          <button>More...</button>
+          <button onClick={supportUs}>More...</button>
         </div>
 
         <div className="cards">
@@ -80,17 +95,26 @@ const Main = () => {
             )}
             {showProgramming && (
               <>
-                <ConvertNumbers />
-                <FixNumbers />
                 <CamelCase />
                 <DuplicatedWords />
                 <SnakeCase />
                 <Slug />
               </>
             )}
+            {showText && (
+              <>
+                <UpperCase />
+                <LowerCase />
+                <CapitalizedCase />
+                <ArabicAccent />
+                <RemoveUrl />
+                <ConvertNumbers />
+                <FixNumbers />
+                <RemoveEmoji />
+              </>
+            )}
           </>
         </div>
-        <QuickIcons />
         <History />
         <Footer />
         <br />
