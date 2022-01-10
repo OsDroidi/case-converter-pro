@@ -7,7 +7,7 @@ export const Toggle = () => {
   return (
     <div>
       <div className="dark-mode" onClick={toggle}>
-        {!darkTheme ? <span>🌚</span> : <span>🌞</span>}
+        {!darkTheme ? <div>🌚</div> : <div>🌞</div>}
       </div>
     </div>
   );

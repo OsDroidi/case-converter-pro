@@ -126,7 +126,7 @@ a:focus {
     var(--color-background)
   );
   background-repeat: no-repeat;
-  background-size: auto 0.3rem;
+  background-size: auto 0rem;
   background-position: 0 80%;
   transition: ease-in-out 0.3s;
   padding: 10px;
@@ -134,10 +134,11 @@ a:focus {
 
 .pretty-text-underline:hover {
   color: #fff;
-  background-size: auto 100%;
+  background-size: auto 50%;
 }
 
-.dark-mode > span {
+.dark-mode > div {
+  margin-left: auto;
   font-size: 2rem;
   cursor: pointer;
 }
@@ -159,5 +160,8 @@ a:focus {
   }
   .word-count > span {
     display: none;
+  }
+  .nav-bar {
+    gap: 0px;
   }
 }

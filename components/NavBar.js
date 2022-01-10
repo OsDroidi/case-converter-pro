@@ -5,6 +5,7 @@ const NavBar = () => {
   return (
     <>
       <ul className="nav-bar">
+        <Toggle />
         <li className="pretty-text-underline">
           <a href="#">About</a>
         </li>
@@ -15,7 +16,6 @@ const NavBar = () => {
           <a href="#">Learn</a>
         </li>
       </ul>
-      <Toggle />
     </>
   );
 };

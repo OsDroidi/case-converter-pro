@@ -12,7 +12,6 @@ import DuplicatedWords from "./convert/DuplicatedWords";
 import Slug from "./convert/Slug";
 import ConvertNumbers from "./convert/ConvertNumbers";
 import FixNumbers from "./convert/FixNumbers";
-import { Toggle } from "./Toggle";
 import TextArea from "./TextArea";
 import WordCount from "./WordCount";
 import Footer from "./Footer";
