@@ -88,39 +88,8 @@ textarea:focus {
   color: var(--color-primary);
 }
 
-.nav-bar {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-  color: var(--color-primary);
-  padding: 10px;
-  background-color: transparent;
-}
-
-li,
-a {
-  font-size: 100%;
-  list-style: none;
-  text-decoration: none;
-  color: var(--color-primary);
-  background-color: transparent;
-}
-
-
-
-li,
-a:focus {
-  background-color: transparent;
-  border: none;
-  color: var(--color-primary);
-}
-
-
-
 .dark-mode > div {
-  margin-left: auto;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -134,11 +103,48 @@ a:focus {
   justify-content: center;
   gap: 30px;
 }
+
 .quotes {
   flex-shrink: 1;
   width: 30%;
   text-align: center;
 }
+
+.main-nav {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+.main-nav a {
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 5px;
+  color: var(--color-primary);
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+}
+
+.main-nav a:active {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: none;
+}
+
+.main-nav a:focus {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+
 @media only screen and (max-width: 600px) {
   button:hover {
     color: var(--color-background);
@@ -153,16 +159,24 @@ a:focus {
   .word-count > span {
     display: none;
   }
-  .nav-bar {
-    gap: 10px;
-  }
   .flex-header {
    flex-direction: column;
     gap: 0px;
   }
   .quotes {
     flex-shrink: 1;
-    width: 100%;
+    width: 80%;
     text-align: center;
+    margin: 0 auto;
+    padding-top: 5px;
+    border-top: 1px solid rgba(104, 104, 104, 0.2);
   }
+  .main-nav a {
+   font-size: 1rem;
+   margin-left: 0;
+   margin-right: 0;
+  }
+  .dark-mode > div {
+    font-size: 1rem; 
+  }  
 }
