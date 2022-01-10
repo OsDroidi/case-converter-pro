@@ -21,6 +21,7 @@ import QuotesText from "./QuotesText";
 import QuickIcons from "./QuickIcons";
 import Language from "./Language";
 import NavBar from "./NavBar";
+import HorizontalScrollable from "./HorizontalScrollable";
 
 const Main = () => {
   const { t } = useContext(MyContext);
@@ -41,6 +42,7 @@ const Main = () => {
         <Language />
         <TextArea />
         <WordCount />
+        <HorizontalScrollable />
         <div className="cards">
           <UpperCase />
           <LowerCase />
