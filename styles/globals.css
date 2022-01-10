@@ -39,9 +39,7 @@ body {
 .title {
   text-align: center;
   padding: 0 0 5px 0;
- 
-  background-image: linear-gradient(45deg,  var(--color-button-text), var(--color-primary)
-  );
+  background:linear-gradient(to left, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -101,13 +99,13 @@ textarea:focus {
 .flex-header {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 10%;
 }
 
 .quotes {
-  flex-shrink: 1;
-  width: 30%;
+  width: 40%;
   text-align: center;
+
 }
 
 .main-nav {
@@ -145,7 +143,7 @@ li {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 786px) {
   button:hover {
     color: var(--color-background);
     background-color: var(--color-primary);
