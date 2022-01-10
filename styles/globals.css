@@ -83,8 +83,7 @@ button {
   word-wrap: normal;
 }
 
-button:hover,
-:focus {
+button:hover {
   color: var(--color-button-text);
   background-color: var(--color-primary);
   border: 1px solid var(--color-paragraph);
@@ -217,10 +216,9 @@ div.scrollmenu button {
 }
 
 @media only screen and (max-width: 786px) {
-  button:hover,
-  :focus {
-    color: var(--color-button-text);
-    background-color: var(--color-primary);
+  button:hover {
+    color: var(--color-primary);
+    background-color: var(--color-background);
     border: 1px solid var(--color-paragraph);
   }
   .word-count {
