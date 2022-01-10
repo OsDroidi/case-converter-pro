@@ -118,6 +118,14 @@ export default function ThemeProvider({ children }) {
     };
   }, []);
 
+  useEffect(() => {
+    if (InputRef && InputRef.current) {
+      InputRef.current.style.height = "100px";
+      const scrollHeight = InputRef.current.scrollHeight;
+      InputRef.current.style.height = scrollHeight + "px";
+    }
+  }, [value]);
+
   const day = today.toLocaleDateString(locale, { weekday: "long" });
   const date = `${day}, ${today.getDate()} ${today.toLocaleDateString(locale, {
     month: "long",

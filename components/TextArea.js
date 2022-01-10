@@ -8,16 +8,16 @@ const TextArea = () => {
     <>
       <textarea
         style={{
+          resize: "none",
           width: "100%",
-          height: 200,
           direction: `${t("direction")}`,
         }}
         value={value}
         onChange={handleTyping}
         placeholder={t("placeholder")}
-        ref={InputRef}
         name="value"
         type="text"
+        ref={InputRef}
       ></textarea>
     </>
   );
