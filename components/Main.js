@@ -33,9 +33,11 @@ const Main = () => {
         }}
       >
         <NavBar />
-        <h1>{t("title")}</h1>
-        <Time />
-        <QuotesText />
+        <h1 className="title">{t("title")}</h1>
+        <div className="flex-header">
+          <Time />
+          <QuotesText />
+        </div>
         <Language />
         <TextArea />
         <WordCount />

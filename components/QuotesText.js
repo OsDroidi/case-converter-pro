@@ -9,7 +9,7 @@ const QuotesText = () => {
   if (!data) return null;
 
   return (
-    <div style={{ textAlign: "center" }} onClick={copyToClipboard}>
+    <div className="quotes" onClick={copyToClipboard}>
       <p>“{data.content}”</p>
       <p>
         - {data.author} <Clipboard iconWidth={20} />

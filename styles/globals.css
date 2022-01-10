@@ -7,7 +7,7 @@
   --color-button: #3d486c;
   --color-paragraph: #797979;
   --color-button-text: rgb(255, 255, 255);
-  --color-background: #fff;
+  --color-background: #F8FAFC
   --color-anchor: #000aff;
 }
 
@@ -17,7 +17,7 @@
   --color-button: #00ff4c;
   --color-paragraph: #8a8a8a;
   --color-button-text: rgb(0, 0, 0);
-  --color-background: #22212b;
+  --color-background: #1a202e;
   --color-anchor: #00ff4c;
 }
 
@@ -33,19 +33,20 @@ body {
   max-width: 900px;
   margin: 0 auto;
   font-family: "Baloo Bhaijaan 2", cursive;
-
   overflow-wrap: break-word;
 }
 
-h1 {
+.title {
   text-align: center;
-  padding: 5px 0 5px 0;
-  background: -webkit-linear-gradient(
-    var(--color-primary),
-    var(--color-background)
+  padding: 0 0 5px 0;
+ 
+  background-image: linear-gradient(45deg,  var(--color-button-text), var(--color-primary)
   );
+  background-size: 100%;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
 }
 
 .cards {
@@ -69,7 +70,7 @@ button {
 
 button:hover,
 :focus {
-  color: var(--color-background);
+  color: var(--color-button-text);
   background-color: var(--color-primary);
   border: 1px solid var(--color-paragraph);
 }
@@ -106,36 +107,16 @@ a {
   background-color: transparent;
 }
 
-li,
-a:active {
-  background-color: transparent;
-}
+
 
 li,
 a:focus {
   background-color: transparent;
   border: none;
-}
-
-.pretty-text-underline {
-  text-decoration: none;
   color: var(--color-primary);
-  background-image: linear-gradient(
-    360deg,
-    var(--color-primary),
-    var(--color-background)
-  );
-  background-repeat: no-repeat;
-  background-size: auto 0rem;
-  background-position: 0 80%;
-  transition: ease-in-out 0.3s;
-  padding: 10px;
 }
 
-.pretty-text-underline:hover {
-  color: #fff;
-  background-size: auto 50%;
-}
+
 
 .dark-mode > div {
   margin-left: auto;
@@ -146,6 +127,17 @@ a:focus {
 .word-count {
   display: flex;
   gap: 20px;
+}
+
+.flex-header {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.quotes {
+  flex-shrink: 1;
+  width: 30%;
+  text-align: center;
 }
 @media only screen and (max-width: 600px) {
   button:hover {
@@ -162,6 +154,15 @@ a:focus {
     display: none;
   }
   .nav-bar {
+    gap: 10px;
+  }
+  .flex-header {
+   flex-direction: column;
     gap: 0px;
+  }
+  .quotes {
+    flex-shrink: 1;
+    width: 100%;
+    text-align: center;
   }
 }
