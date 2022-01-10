@@ -1,6 +1,11 @@
 import React from "react";
 import LanguageIcon from "./icons/LanguageIcon";
 import Reset from "./icons/Reset";
+import Clipboard from "./icons/Clipboard";
+import ShowIcon from "./icons/ShowIcon";
+import HideIcon from "./icons/HideIcon";
+import SelectAll from "./icons/SelectAll";
+import AddIcon from "./icons/AddIcon";
 const RippleButton = ({ text, onClick, component }) => {
   const [coords, setCoords] = React.useState({ x: -1, y: -1 });
   const [isRippling, setIsRippling] = React.useState(false);
@@ -38,7 +43,12 @@ const RippleButton = ({ text, onClick, component }) => {
       )}
       <span>
         {component === "LanguageIcon" ? <LanguageIcon iconWidth={20} /> : ""}
+        {component === "Clipboard" ? <Clipboard iconWidth={20} /> : ""}
+        {component === "ShowIcon" ? <ShowIcon iconWidth={20} /> : ""}
+        {component === "HideIcon" ? <HideIcon iconWidth={20} /> : ""}
+        {component === "SelectAll" ? <SelectAll iconWidth={20} /> : ""}
         {component === "Reset" ? <Reset iconWidth={20} /> : ""}
+        {component === "AddIcon" ? <AddIcon iconWidth={20} /> : ""}
         {text}
       </span>
     </button>
