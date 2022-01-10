@@ -1,7 +1,10 @@
 import React from "react";
 import { Toggle } from "./Toggle";
+import { useContext } from "react";
+import { MyContext } from "../context/Context";
 
 const NavBar = () => {
+  const { t } = useContext(MyContext);
   return (
     <>
       <nav>
@@ -12,13 +15,13 @@ const NavBar = () => {
             </a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="#">{t("about")}</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="#">{t("learn")}</a>
           </li>
           <li>
-            <a href="#">Learn</a>
+            <a href="#">{t("contact")}</a>
           </li>
         </ul>
       </nav>

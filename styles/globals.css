@@ -36,6 +36,23 @@ body {
   overflow-wrap: break-word;
 }
 
+a {
+  color: var(--color-primary);
+	text-decoration: none;
+}
+
+a:focus {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: none;
+}
+
+a:active {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: none;
+}
+
 .title {
   text-align: center;
   padding: 0 0 5px 0;
