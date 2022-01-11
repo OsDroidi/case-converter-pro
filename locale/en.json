@@ -28,5 +28,18 @@
     "afternoon": "Afternoon",
     "about": "About",
     "learn": "Learn",
-    "contact": "Contact"
+    "contact": "Contact",
+    "footer1": "Build with",
+    "footer2": "and",
+    "footer3": "by",
+    "footer4": "Osama Saeed",
+    "all": "All",
+    "text": "Text",
+    "coding": "Coding",
+    "more": "More",
+    "clear": "Clear history",
+    "youhave": "You have",
+    "noTasks": "no tasks",
+    "oneValue": "1 value",
+    "tasks": "tasks"
 }

@@ -69,10 +69,10 @@ const Main = () => {
         <TextArea />
         <WordCount />
         <div className="scrollmenu">
-          <button onClick={handleShow}>All</button>
-          <button onClick={handleShowText}>Text</button>
-          <button onClick={handleShowProgramming}>Programming</button>
-          <button onClick={supportUs}>More...</button>
+          <button onClick={handleShow}>{t("all")}</button>
+          <button onClick={handleShowText}>{t("text")}</button>
+          <button onClick={handleShowProgramming}>{t("coding")}</button>
+          <button onClick={supportUs}>{t("more")}</button>
         </div>
 
         <div className="cards">

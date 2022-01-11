@@ -15,13 +15,13 @@ const History = () => {
     <div>
       <div>
         <div>
-          You have
+          {t("youhave")}
           {!tasks.length
-            ? " no tasks"
+            ? ` ${t("noTasks")}`
             : tasks.length === 1
-            ? " 1 value"
+            ? ` ${t("oneValue")}`
             : tasks.length > 1
-            ? ` ${tasks.length} tasks`
+            ? ` ${tasks.length} ${t("tasks")}`
             : null}
         </div>
         <button onClick={handleShow}>
@@ -73,7 +73,7 @@ const History = () => {
             ))}
             {!tasks.length ? null : (
               <div>
-                <button onClick={() => handleClear()}>Clear</button>
+                <button onClick={() => handleClear()}>{t("clear")}</button>
               </div>
             )}
           </div>
