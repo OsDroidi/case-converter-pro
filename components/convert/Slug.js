@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../../context/Context";
+import RippleButton from "../RippleButton";
 
 const Slug = () => {
   const { value, setValue } = useContext(MyContext);
@@ -15,7 +16,7 @@ const Slug = () => {
 
   return (
     <>
-      <button onClick={slugButton}>slug</button>
+      <RippleButton text="slug" onClick={slugButton}></RippleButton>
     </>
   );
 };

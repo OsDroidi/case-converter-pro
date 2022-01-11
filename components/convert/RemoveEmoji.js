@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../../context/Context";
+import RippleButton from "../RippleButton";
 
 const RemoveEmoji = () => {
   const { value, setValue } = useContext(MyContext);
@@ -14,7 +15,7 @@ const RemoveEmoji = () => {
   };
   return (
     <>
-      <button onClick={removeEmojiButton}>🙄</button>
+      <RippleButton text="🙄" onClick={removeEmojiButton}></RippleButton>
     </>
   );
 };

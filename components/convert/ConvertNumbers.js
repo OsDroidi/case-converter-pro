@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../../context/Context";
+import RippleButton from "../RippleButton";
 
 const ConvertNumbers = () => {
   const { value, setValue, t } = useContext(MyContext);
@@ -41,7 +42,10 @@ const ConvertNumbers = () => {
   };
   return (
     <>
-      <button onClick={convertNumbersButton}>{t("arabicToEnglish")}</button>
+      <RippleButton
+        text={`${t("arabicToEnglish")}`}
+        onClick={convertNumbersButton}
+      ></RippleButton>
     </>
   );
 };

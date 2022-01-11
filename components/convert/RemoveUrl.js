@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../../context/Context";
+import RippleButton from "../RippleButton";
 
 const RemoveUrl = () => {
   const { value, setValue, t } = useContext(MyContext);
@@ -10,7 +11,10 @@ const RemoveUrl = () => {
 
   return (
     <>
-      <button onClick={removeUrlButton}>{t("removeUrl")}</button>
+      <RippleButton
+        text={`${t("removeUrl")}`}
+        onClick={removeUrlButton}
+      ></RippleButton>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../../context/Context";
+import RippleButton from "../RippleButton";
 
 const ArabicAccent = () => {
   const { value, setValue, t } = useContext(MyContext);
@@ -14,7 +15,10 @@ const ArabicAccent = () => {
   };
   return (
     <>
-      <button onClick={removeArabicAccentButton}>{t("arabicAccent")}</button>
+      <RippleButton
+        text={`${t("arabicAccent")}`}
+        onClick={removeArabicAccentButton}
+      ></RippleButton>
     </>
   );
 };

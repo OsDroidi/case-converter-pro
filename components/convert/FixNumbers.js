@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../../context/Context";
+import RippleButton from "../RippleButton";
 
 const ConvertNumbers = () => {
   const { value, setValue, t } = useContext(MyContext);
@@ -9,20 +10,15 @@ const ConvertNumbers = () => {
       return id[+w];
     });
   };
-  const FixNumbers = (str) => {
-    if (typeof str === "string") {
-      for (var i = 0; i < 10; i++) {
-        str = str.replace(persianNumbers[i], i).replace(arabicNumbers[i], i);
-      }
-    }
-    return str;
-  };
   const convertNumbersButton = () => {
     setValue(FixNumbersEnglish(value));
   };
   return (
     <>
-      <button onClick={convertNumbersButton}>{t("englishToArabic")}</button>
+      <RippleButton
+        text={`${t("englishToArabic")}`}
+        onClick={convertNumbersButton}
+      ></RippleButton>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../../context/Context";
+import RippleButton from "../RippleButton";
 
 const CapitalizedCase = () => {
   const { value, setValue, t } = useContext(MyContext);
@@ -13,7 +14,10 @@ const CapitalizedCase = () => {
   };
   return (
     <>
-      <button onClick={capitalizedCaseButton}>{t("capitalizedCase")}</button>
+      <RippleButton
+        text={`${t("capitalizedCase")}`}
+        onClick={capitalizedCaseButton}
+      ></RippleButton>
     </>
   );
 };

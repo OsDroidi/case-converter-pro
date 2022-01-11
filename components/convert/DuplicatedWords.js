@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../../context/Context";
+import RippleButton from "../RippleButton";
 
 const DuplicatedWords = () => {
   const { value, setValue, t } = useContext(MyContext);
@@ -10,7 +11,10 @@ const DuplicatedWords = () => {
 
   return (
     <>
-      <button onClick={removeDuplicatedWords}>{t("duplicatedWords")}</button>
+      <RippleButton
+        text={`${t("duplicatedWords")}`}
+        onClick={removeDuplicatedWords}
+      ></RippleButton>
     </>
   );
 };
