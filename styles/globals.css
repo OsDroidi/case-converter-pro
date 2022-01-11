@@ -65,10 +65,10 @@ a:active {
 }
 
 .cards {
-  margin: 0 auto;
+  margin: 10px auto;
   display: grid;
-  grid-gap: 0.8rem;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   padding: 5px 0 20px 0;
 }
 
@@ -166,7 +166,8 @@ li {
   color: var(--color-primary);
   background-color: var(--color-background);
   border: 1px solid var(--color-paragraph);
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+  text-align: center;
   word-wrap: normal;
   overflow: hidden;
   position: relative;
