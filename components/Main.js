@@ -53,12 +53,12 @@ const Main = () => {
 
   return (
     <>
+      <NavBar />
       <div
         style={{
           direction: `${t("direction")}`,
         }}
       >
-        <NavBar />
         <h1 className="title">{t("title")}</h1>
         <div className="flex-header">
           <Time />
