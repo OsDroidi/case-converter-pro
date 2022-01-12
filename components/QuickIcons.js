@@ -3,8 +3,16 @@ import { MyContext } from "../context/Context";
 import RippleButton from "./RippleButton";
 
 const QuickIcons = () => {
-  const { setValue, handleSelect, t, addTask, copy, copyClipboard } =
-    useContext(MyContext);
+  const {
+    setValue,
+    handleSelect,
+    t,
+    addTask,
+    copy,
+    copyClipboard,
+    toggleArea,
+    handleSelectNormal,
+  } = useContext(MyContext);
 
   return (
     <>
@@ -22,7 +30,7 @@ const QuickIcons = () => {
       ></RippleButton>
       <RippleButton
         text={`${t("selectAll")}`}
-        onClick={handleSelect}
+        onClick={toggleArea ? handleSelect : handleSelectNormal}
         style={{ margin: `${t("margin")}` }}
         component="SelectAll"
       ></RippleButton>

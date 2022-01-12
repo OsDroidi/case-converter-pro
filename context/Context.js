@@ -18,6 +18,7 @@ export default function ThemeProvider({ children }) {
   const [copySuccess, setCopySuccess] = useState("");
   const [copy, setCopy] = useState("");
   const [today, setDate] = useState(new Date()); // Save the current date to be able to trigger an update
+  const [toggleArea, setToggleArea] = useState(false);
   const locale = `${t("time")}`;
 
   async function updateQuote() {
@@ -89,6 +90,23 @@ export default function ThemeProvider({ children }) {
   };
 
   const InputRef = useRef(null);
+  const inputElement = useRef(null);
+
+  useEffect(() => {
+    if (inputElement.current) {
+      inputElement.current.focus();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (InputRef.current) {
+      InputRef.current.focus();
+    }
+  }, []);
+
+  const toggleTextArea = () => {
+    setToggleArea(!toggleArea);
+  };
 
   useEffect(() => {
     setWordCount(
@@ -178,6 +196,12 @@ export default function ThemeProvider({ children }) {
     }
   };
 
+  const handleSelectNormal = () => {
+    if (inputElement) {
+      inputElement.current.select();
+    }
+  };
+
   const SwitchLanguage = () => {
     setLang(!lang);
   };
@@ -226,6 +250,11 @@ export default function ThemeProvider({ children }) {
         wish,
         date,
         time,
+        toggleArea,
+        setToggleArea,
+        inputElement,
+        toggleTextArea,
+        handleSelectNormal,
       }}
     >
       {children}

@@ -1,25 +1,20 @@
-import React, { useState, useRef, useEffect } from "react";
 import { useContext } from "react";
 import { MyContext } from "../context/Context";
 
 const TextArea = () => {
-  const { value, handleTyping, t, InputRef } = useContext(MyContext);
-  const [toggle, setToggle] = useState(false);
-  const inputElement = useRef(null);
-
-  useEffect(() => {
-    if (inputElement.current) {
-      inputElement.current.focus();
-    }
-  }, []);
-
-  const toggleTextArea = () => {
-    setToggle(!toggle);
-  };
+  const {
+    value,
+    handleTyping,
+    t,
+    InputRef,
+    toggleArea,
+    inputElement,
+    toggleTextArea,
+  } = useContext(MyContext);
 
   return (
     <>
-      {toggle ? (
+      {toggleArea ? (
         <textarea
           style={{
             resize: "none",
@@ -48,8 +43,10 @@ const TextArea = () => {
           ref={inputElement}
         ></textarea>
       )}
-      <button onClick={() => toggleTextArea(!toggle)}>
-        {!toggle ? "Enable Auto Grow Textarea" : "Disable Auto Grow Textarea"}
+      <button onClick={() => toggleTextArea(!toggleArea)}>
+        {!toggleArea
+          ? "Enable Auto Grow Textarea"
+          : "Disable Auto Grow Textarea"}
       </button>
     </>
   );
