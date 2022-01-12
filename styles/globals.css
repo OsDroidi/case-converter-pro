@@ -95,7 +95,6 @@ textarea {
   color: var(--color-primary);
   padding: 10px;
   border-color: var(--color-paragraph);
-  overflow:hidden;
 }
 
 textarea:focus {

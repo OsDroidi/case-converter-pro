@@ -91,10 +91,6 @@ export default function ThemeProvider({ children }) {
   const InputRef = useRef(null);
 
   useEffect(() => {
-    InputRef.current.focus();
-  }, []);
-
-  useEffect(() => {
     setWordCount(
       value.trim().split(/\s+/)[0] === "" ? 0 : value.trim().split(/\s+/).length
     );
