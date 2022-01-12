@@ -94,6 +94,7 @@ textarea {
   background-color: var(--color-background);
   color: var(--color-primary);
   padding: 10px;
+  height: 150px;
   border-color: var(--color-paragraph);
 }
 

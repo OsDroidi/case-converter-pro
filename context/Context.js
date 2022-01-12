@@ -116,7 +116,7 @@ export default function ThemeProvider({ children }) {
 
   useEffect(() => {
     if (InputRef && InputRef.current) {
-      InputRef.current.style.height = "100px";
+      InputRef.current.style.height = "150px";
       const scrollHeight = InputRef.current.scrollHeight;
       InputRef.current.style.height = scrollHeight + "px";
     }
