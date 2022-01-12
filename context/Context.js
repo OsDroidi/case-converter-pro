@@ -141,11 +141,11 @@ export default function ThemeProvider({ children }) {
     minute: "numeric",
   });
 
-  const addTask = (e) => {
+  const addTask = () => {
     if (value) {
       const newTask = { id: new Date().getTime().toString(), title: value };
-      setTasks([...tasks, newTask]);
-      localStorage.setItem("localTasks", JSON.stringify([...tasks, newTask]));
+      setTasks([newTask, ...tasks]);
+      localStorage.setItem("localTasks", JSON.stringify([newTask, ...tasks]));
       setValue("");
     }
   };
