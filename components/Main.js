@@ -1,17 +1,5 @@
 import React, { useContext } from "react";
 import { MyContext } from "../context/Context";
-import ArabicAccent from "./convert/ArabicAccent";
-import CamelCase from "./convert/CamelCase";
-import CapitalizedCase from "./convert/CapitalizedCase";
-import LowerCase from "./convert/LowerCase";
-import RemoveEmoji from "./convert/RemoveEmoji";
-import RemoveUrl from "./convert/RemoveUrl";
-import SnakeCase from "./convert/SnakeCase";
-import UpperCase from "./convert/UpperCase";
-import DuplicatedWords from "./convert/DuplicatedWords";
-import Slug from "./convert/Slug";
-import ConvertNumbers from "./convert/ConvertNumbers";
-import FixNumbers from "./convert/FixNumbers";
 import TextArea from "./TextArea";
 import WordCount from "./WordCount";
 import Footer from "./Footer";
@@ -21,36 +9,21 @@ import QuotesText from "./QuotesText";
 import QuickIcons from "./QuickIcons";
 import Language from "./Language";
 import NavBar from "./NavBar";
+import All from "./filter/All";
+import Codeing from "./filter/Codeing";
+import Text from "./filter/Text";
 
 const Main = () => {
-  const { t } = useContext(MyContext);
-
-  const [show, setShow] = React.useState(true);
-  const [showText, setShowText] = React.useState(false);
-  const [showProgramming, setShowProgramming] = React.useState(false);
-
-  const handleShow = () => {
-    setShow(true);
-    setShowProgramming(false);
-    setShowText(false);
-  };
-
-  const handleShowText = () => {
-    setShow(false);
-    setShowProgramming(false);
-    setShowText(true);
-  };
-
-  const handleShowProgramming = () => {
-    setShow(false);
-    setShowText(false);
-    setShowProgramming(true);
-  };
-
-  const supportUs = () => {
-    window.open("https://www.paypal.me/osdroidi", "_blank");
-  };
-
+  const {
+    t,
+    supportUs,
+    handleShowProgramming,
+    handleShowText,
+    handleShowAll,
+    showAllFilter,
+    showProgramming,
+    showText,
+  } = useContext(MyContext);
   return (
     <>
       <NavBar />
@@ -69,7 +42,7 @@ const Main = () => {
         <TextArea />
         <WordCount />
         <div className="scrollmenu">
-          <button onClick={handleShow}>{t("all")}</button>
+          <button onClick={handleShowAll}>{t("all")}</button>
           <button onClick={handleShowText}>{t("text")}</button>
           <button onClick={handleShowProgramming}>{t("coding")}</button>
           <button onClick={supportUs}>{t("more")}</button>
@@ -77,40 +50,19 @@ const Main = () => {
 
         <div className="cards">
           <>
-            {show && (
+            {showAllFilter && (
               <>
-                <UpperCase />
-                <LowerCase />
-                <CapitalizedCase />
-                <ArabicAccent />
-                <RemoveUrl />
-                <RemoveEmoji />
-                <ConvertNumbers />
-                <FixNumbers />
-                <CamelCase />
-                <DuplicatedWords />
-                <SnakeCase />
-                <Slug />
+                <All />
               </>
             )}
             {showProgramming && (
               <>
-                <CamelCase />
-                <DuplicatedWords />
-                <SnakeCase />
-                <Slug />
+                <Codeing />
               </>
             )}
             {showText && (
               <>
-                <UpperCase />
-                <LowerCase />
-                <CapitalizedCase />
-                <ArabicAccent />
-                <RemoveUrl />
-                <ConvertNumbers />
-                <FixNumbers />
-                <RemoveEmoji />
+                <Text />
               </>
             )}
           </>

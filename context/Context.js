@@ -19,6 +19,10 @@ export default function ThemeProvider({ children }) {
   const [copy, setCopy] = useState("");
   const [today, setDate] = useState(new Date()); // Save the current date to be able to trigger an update
   const [toggleArea, setToggleArea] = useState(false);
+  const [showAllFilter, setShowAllFilter] = useState(true);
+  const [showText, setShowText] = useState(false);
+  const [showProgramming, setShowProgramming] = useState(false);
+
   const locale = `${t("time")}`;
 
   async function updateQuote() {
@@ -210,6 +214,28 @@ export default function ThemeProvider({ children }) {
     setShow(!show);
   };
 
+  const handleShowAll = () => {
+    setShowAllFilter(true);
+    setShowProgramming(false);
+    setShowText(false);
+  };
+
+  const handleShowText = () => {
+    setShowAllFilter(false);
+    setShowProgramming(false);
+    setShowText(true);
+  };
+
+  const handleShowProgramming = () => {
+    setShowAllFilter(false);
+    setShowText(false);
+    setShowProgramming(true);
+  };
+
+  const supportUs = () => {
+    window.open("https://www.paypal.me/osdroidi", "_blank");
+  };
+
   return (
     <MyContext.Provider
       value={{
@@ -255,6 +281,16 @@ export default function ThemeProvider({ children }) {
         inputElement,
         toggleTextArea,
         handleSelectNormal,
+        supportUs,
+        handleShowProgramming,
+        handleShowText,
+        handleShowAll,
+        showAllFilter,
+        setShowAllFilter,
+        setShowProgramming,
+        showProgramming,
+        setShowText,
+        showText,
       }}
     >
       {children}
