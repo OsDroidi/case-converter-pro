@@ -41,5 +41,6 @@
     "youhave": "You have",
     "noTasks": "no tasks",
     "oneValue": "1 value",
-    "tasks": "tasks"
+    "tasks": "tasks",
+    "quotes": "https://raw.githubusercontent.com/harbi/short-quotes/master/en/happiness.json"
 }
