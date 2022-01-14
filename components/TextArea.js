@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MyContext } from "../context/Context";
+import RippleButton from "../components/RippleButton";
 
 const TextArea = () => {
   const {
@@ -43,11 +44,14 @@ const TextArea = () => {
           ref={inputElement}
         ></textarea>
       )}
-      <button onClick={() => toggleTextArea(!toggleArea)}>
-        {!toggleArea
-          ? "Enable Auto Grow Textarea"
-          : "Disable Auto Grow Textarea"}
-      </button>
+      <RippleButton
+        text={
+          !toggleArea
+            ? "Enable Auto Grow Textarea"
+            : "Disable Auto Grow Textarea"
+        }
+        onClick={() => toggleTextArea(!toggleArea)}
+      ></RippleButton>
     </>
   );
 };

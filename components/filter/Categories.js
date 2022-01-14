@@ -1,15 +1,19 @@
 import React, { useContext } from "react";
 import { MyContext } from "../../context/Context";
+import RippleButton from "../RippleButton";
 
 const Categories = () => {
   const { t, handleShowAll, handleShowText, handleShowProgramming, supportUs } =
     useContext(MyContext);
   return (
     <div className="scrollmenu">
-      <button onClick={handleShowAll}>{t("all")}</button>
-      <button onClick={handleShowText}>{t("text")}</button>
-      <button onClick={handleShowProgramming}>{t("coding")}</button>
-      <button onClick={supportUs}>{t("more")}</button>
+      <RippleButton text={t("all")} onClick={handleShowAll}></RippleButton>
+      <RippleButton text={t("text")} onClick={handleShowText}></RippleButton>
+      <RippleButton
+        text={t("coding")}
+        onClick={handleShowProgramming}
+      ></RippleButton>
+      <RippleButton text={t("more")} onClick={supportUs}></RippleButton>
     </div>
   );
 };

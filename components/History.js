@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { useContext } from "react";
 import { MyContext } from "../context/Context";
-import Clipboard from "./icons/Clipboard";
-import Reset from "./icons/Reset";
-import ShowIcon from "./icons/ShowIcon";
-import HideIcon from "./icons/HideIcon";
+import RippleButton from "../components/RippleButton";
 
 const History = () => {
   const [copy, setCopy] = useState("");
@@ -24,19 +21,11 @@ const History = () => {
             ? ` ${tasks.length} ${t("tasks")}`
             : null}
         </div>
-        <button onClick={handleShow}>
-          {!show ? (
-            <span>
-              <ShowIcon iconWidth={20} />
-              {t("showHistory")}
-            </span>
-          ) : (
-            <span>
-              <HideIcon iconWidth={20} />
-              {t("hideHistory")}
-            </span>
-          )}
-        </button>
+        <RippleButton
+          text={!show ? `${t("showHistory")}` : `${t("hideHistory")}`}
+          onClick={handleShow}
+          component={!show ? "ShowIcon" : "HideIcon"}
+        ></RippleButton>
         <p>{copy}</p>
         {show && (
           <div>
@@ -49,12 +38,11 @@ const History = () => {
                 </div>
 
                 <div>
-                  <button onClick={() => handleDelete(value)}>
-                    <span>
-                      <Reset iconWidth={20} />
-                    </span>
-                  </button>
-                  <button
+                  <RippleButton
+                    onClick={() => handleDelete(value)}
+                    component="Reset"
+                  ></RippleButton>
+                  <RippleButton
                     onClick={() => {
                       navigator.clipboard.writeText(value.title);
                       setCopy("Copied!");
@@ -63,17 +51,18 @@ const History = () => {
                       }, 1000);
                     }}
                     style={{ marginRight: `${t("marginRight")}` }}
-                  >
-                    <span>
-                      <Clipboard iconWidth={20} />
-                    </span>
-                  </button>
+                    component="Clipboard"
+                  ></RippleButton>
                 </div>
               </div>
             ))}
             {!tasks.length ? null : (
               <div>
-                <button onClick={() => handleClear()}>{t("clear")}</button>
+                <RippleButton
+                  text={t("clear")}
+                  onClick={() => handleClear()}
+                  component="Reset"
+                ></RippleButton>
               </div>
             )}
           </div>
