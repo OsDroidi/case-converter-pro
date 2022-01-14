@@ -12,18 +12,10 @@ import NavBar from "./NavBar";
 import All from "./filter/All";
 import Codeing from "./filter/Codeing";
 import Text from "./filter/Text";
+import Categories from "./filter/Categories";
 
 const Main = () => {
-  const {
-    t,
-    supportUs,
-    handleShowProgramming,
-    handleShowText,
-    handleShowAll,
-    showAllFilter,
-    showProgramming,
-    showText,
-  } = useContext(MyContext);
+  const { t, showAllFilter, showProgramming, showText } = useContext(MyContext);
   return (
     <>
       <NavBar />
@@ -41,13 +33,7 @@ const Main = () => {
         <QuickIcons />
         <TextArea />
         <WordCount />
-        <div className="scrollmenu">
-          <button onClick={handleShowAll}>{t("all")}</button>
-          <button onClick={handleShowText}>{t("text")}</button>
-          <button onClick={handleShowProgramming}>{t("coding")}</button>
-          <button onClick={supportUs}>{t("more")}</button>
-        </div>
-
+        <Categories />
         <div className="cards">
           <>
             {showAllFilter && (
