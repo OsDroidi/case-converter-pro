@@ -12,9 +12,6 @@ const QuotesText = () => {
     axios
       .get(`${t("quotes")}`)
       .then((response) => {
-        console.log(
-          response.data[Math.floor(Math.random() * response.data.length)]
-        );
         setQuote(
           response.data[Math.floor(Math.random() * response.data.length)]
         );
