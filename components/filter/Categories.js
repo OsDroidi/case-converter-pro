@@ -13,7 +13,7 @@ const Categories = () => {
         text={t("coding")}
         onClick={handleShowProgramming}
       ></RippleButton>
-      <RippleButton text={t("more")} onClick={supportUs}></RippleButton>
+      {/* <RippleButton text={t("more")} onClick={supportUs}></RippleButton> */}
     </div>
   );
 };

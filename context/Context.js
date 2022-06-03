@@ -201,9 +201,9 @@ export default function ThemeProvider({ children }) {
     setShowProgramming(true);
   };
 
-  const supportUs = () => {
-    window.open("https://www.paypal.me/osdroidi", "_blank");
-  };
+  // const supportUs = () => {
+  //   window.open("https://www.paypal.me/osdroidi", "_blank");
+  // };
 
   return (
     <MyContext.Provider
@@ -245,7 +245,7 @@ export default function ThemeProvider({ children }) {
         inputElement,
         toggleTextArea,
         handleSelectNormal,
-        supportUs,
+        // supportUs,
         handleShowProgramming,
         handleShowText,
         handleShowAll,
