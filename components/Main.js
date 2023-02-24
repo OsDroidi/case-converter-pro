@@ -13,11 +13,21 @@ import All from "./filter/All";
 import Codeing from "./filter/Codeing";
 import Text from "./filter/Text";
 import Categories from "./filter/Categories";
+import GithubCorner from "react-github-corner";
 
 const Main = () => {
   const { t, showAllFilter, showProgramming, showText } = useContext(MyContext);
   return (
     <>
+      <GithubCorner
+        href="https://github.com/OsDroidi/case-converter-pro"
+        bannerColor="#000"
+        octoColor="#fff"
+        size={80}
+        direction="right"
+        svgStyle={{ mixBlendMode: "darken" }}
+        target="_blank"
+      />
       <NavBar />
       <div
         style={{
